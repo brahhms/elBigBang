@@ -1,0 +1,16 @@
+---
+
+- hosts: all
+
+  sudo: yes
+
+  vars:
+    - db_name: drupalx
+    - db_user: brahhms
+    - db_password: entrar
+
+  roles:
+    - update
+    - php
+    - mysql
+    - drupal

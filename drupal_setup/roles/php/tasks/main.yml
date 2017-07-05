@@ -1,0 +1,36 @@
+---
+
+- name: Instalar PHP
+  apt: name=php5 state=latest
+
+- name: Instalar Apache2
+  apt: name=apache2 state=latest
+
+- name: Instalar php5-curl   
+  apt: name=php5-curl state=latest
+
+- name: Instalar php5-intl
+  apt: name=php5-intl state=latest
+
+- name: Instalar php5-mcrypt
+  apt: name=php5-mcrypt state=latest
+
+- name: Instalar php5-sqlite
+  apt: name=php5-sqlite state=latest
+
+- name: Instalar php5-xmlrpc
+  apt: name=php5-xmlrpc state=latest
+
+- name: Instalar libapache2-mod-php5
+  apt: name=libapache2-mod-php5 state=latest
+
+- name: Instalar libreria PHP GD
+  apt: name=php5-gd state=latest
+  notify:
+    - Restart Apache
+
+- name: Instalar phpmyadmin
+  apt: name=phpmyadmin state=latest
+  notify:
+    - Restart Apache
+

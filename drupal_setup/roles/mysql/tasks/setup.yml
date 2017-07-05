@@ -1,0 +1,7 @@
+---
+
+- name: Instalar MySQL server
+  apt: name=mysql-server state=latest
+
+- name: Instalar modulo MySQL para PHP
+  apt: name=php5-mysql state=latest

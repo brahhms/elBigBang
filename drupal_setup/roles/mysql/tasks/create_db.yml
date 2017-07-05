@@ -1,0 +1,13 @@
+---
+- name: Instalar Python MySQLdb
+  apt: name=python-mysqldb state=latest
+
+- name: Crear base de datos de Drupal
+  mysql_db: db={{ db_name }} state=present
+
+- name: Crear usuario para base de datos de drupal
+  mysql_user: >
+    name={{ db_user }}
+    password={{ db_password }}
+    priv={{ db_name }}.*:ALL
+    host=localhost
